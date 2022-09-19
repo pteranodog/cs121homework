@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/jae0025/cppfiles",
-      "program": "c:/Users/jae0025/cppfiles/builds/${fileBasenameNoExtension}.exe",
+      "cwd": "c:/Users/jae0025/cs121homework",
+      "program": "c:/Users/jae0025/cs121homework/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
