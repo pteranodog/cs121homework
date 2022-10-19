@@ -27,7 +27,7 @@ int main(void) {
 
 void loadDictionary(string dict[]) {
     ifstream dictionaryfile;
-    dictionaryfile.open("D:\\GitHubRepos\\cs121homework\\datafiles\\dictionary.txt");
+    dictionaryfile.open("datafiles/dictionary.txt");
     if (!dictionaryfile) {
         cout << "Unable to open dictionary file." << endl;
         system("pause");
