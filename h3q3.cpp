@@ -13,7 +13,7 @@ int main(void) {
     char answer = 'n';
     bool repeat = false;
     ifstream dictionaryfile;
-    dictionaryfile.open("datafiles/dictionary.txt");
+    dictionaryfile.open("D:\\GitHubRepos\\cs121homework\\datafiles\\dictionary.txt");
     if (!dictionaryfile) {
         cout << "Unable to open dictionary file." << endl;
         system("pause");

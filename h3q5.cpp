@@ -10,6 +10,7 @@ const unsigned int wordSize = 4;
 const unsigned int dictLength = 4030;
 void loadDictionary(string dict[]);
 void findWords(string line, string dict[]);
+void findWordsInLine(string line, string dict[], bool reversed);
 string getRow(string line, int row);
 string getColumn(string line, int column);
 string transpose(string line);
@@ -26,7 +27,7 @@ int main(void) {
 
 void loadDictionary(string dict[]) {
     ifstream dictionaryfile;
-    dictionaryfile.open("datafiles/dictionary.txt");
+    dictionaryfile.open("D:\\GitHubRepos\\cs121homework\\datafiles\\dictionary.txt");
     if (!dictionaryfile) {
         cout << "Unable to open dictionary file." << endl;
         system("pause");
@@ -39,13 +40,17 @@ void loadDictionary(string dict[]) {
 
 void findWords(string line, string dict[]) {
     for (int i = 0; i < dim; i++) {
+        cout << "Row " << i + 1 << ":\t\t";
         findWordsInLine(getRow(line, i), dict, false);
         findWordsInLine(getRow(line, i), dict, true);
+        cout << endl;
     }
     line = transpose(line);
     for (int i = 0; i < dim; i++) {
+        cout << "Column " << i + 1 << ":\t";
         findWordsInLine(getRow(line, i), dict, false);
         findWordsInLine(getRow(line, i), dict, true);
+        cout << endl;
     }
 }
 
@@ -55,7 +60,7 @@ void findWordsInLine(string line, string dict[], bool reversedWords) {
     }
     for (int i = 0; i < dictLength; i++) {
         if (line.find(dict[i]) != string::npos) {
-            cout << dict[i] << endl;
+            cout << dict[i] << " ";
         }
     }
 }
