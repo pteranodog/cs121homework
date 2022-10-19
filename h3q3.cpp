@@ -42,7 +42,7 @@ int main(void) {
             repeat = false;
         }
     } while (repeat);
-    system("pause");
+    std::system("pause");
     return 0;
 }
 
@@ -51,7 +51,7 @@ void loadDictionary(string dict[]) {
     dictionaryfile.open("datafiles/dictionary.txt");
     if (!dictionaryfile) {
         cout << "Unable to open dictionary file." << endl;
-        system("pause");
+        std::system("pause");
         return;
     }
     for (int i = 0; i < dictLength; i++) {
