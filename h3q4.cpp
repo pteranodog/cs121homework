@@ -7,13 +7,14 @@ using namespace std;
 
 const unsigned int dictLength = 4030;
 void loadDictionary(string dict[]);
+bool isPalindrome(string line);
 string reverse(string line);
 
 int main(void) {
     string dictionary[dictLength];
     loadDictionary(dictionary);
     for (int i = 0; i < 4030; i++) {
-        if (reverse(dictionary[i]) == dictionary[i]) {
+        if (isPalindrome(dictionary[i])) {
             cout << dictionary[i] << endl;
         }
     }
@@ -32,6 +33,10 @@ void loadDictionary(string dict[]) {
     for (int i = 0; i < dictLength; i++) {
         dictionaryfile >> dict[i];
     }
+}
+
+bool isPalindrome(string line) {
+    return line == reverse(line);
 }
 
 string reverse(string line) {
