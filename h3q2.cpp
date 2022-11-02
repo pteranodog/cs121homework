@@ -33,4 +33,6 @@ int main(void) {
             repeat = false;
         }
     } while (repeat);
+    std::system("pause");
+    return 0;
 }

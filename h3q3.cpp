@@ -6,23 +6,16 @@
 
 using namespace std;
 
+const unsigned int dictLength = 4030;
+void loadDictionary(string dict[]);
 string capitalizeFirst(string line);
 string toLowerCase(string line);
 
 int main(void) {
     char answer = 'n';
     bool repeat = false;
-    ifstream dictionaryfile;
-    dictionaryfile.open("datafiles/dictionary.txt");
-    if (!dictionaryfile) {
-        cout << "Unable to open dictionary file." << endl;
-        system("pause");
-        return 1;
-    }
-    string dictionary[4030];
-    for (int i = 0; i < 4030; i++) {
-        dictionaryfile >> dictionary[i];
-    }
+    string dictionary[dictLength];
+    loadDictionary(dictionary);
     do {
         cout << "Enter a four-letter word to check if it is spelled correctly: ";
         string word;
@@ -49,8 +42,21 @@ int main(void) {
             repeat = false;
         }
     } while (repeat);
-    system("pause");
+    std::system("pause");
     return 0;
+}
+
+void loadDictionary(string dict[]) {
+    ifstream dictionaryfile;
+    dictionaryfile.open("datafiles/dictionary.txt");
+    if (!dictionaryfile) {
+        cout << "Unable to open dictionary file." << endl;
+        std::system("pause");
+        return;
+    }
+    for (int i = 0; i < dictLength; i++) {
+        dictionaryfile >> dict[i];
+    }
 }
 
 string toLowerCase(string line)
