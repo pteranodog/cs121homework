@@ -85,7 +85,7 @@ string get_month_name(months mm)
 	case JUL: name = "July"; break;
 	case AUG: name = "August"; break;
 	case SEP: name = "September"; break;
-	case OCTG: name = "October"; break;
+	case OCT: name = "October"; break;
 	case NOV: name = "November"; break;
 	case DEC: name = "December"; break;
 	}
