@@ -30,6 +30,8 @@
   ],
   "files.associations": {
     "iostream": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "ostream": "cpp",
+    "iomanip": "cpp"
   }
 }
